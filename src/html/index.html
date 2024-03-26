@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+{{> (config config.partials.head) title=config.defaultPageTitle }}
+
+<body class="{{ config.classes.body }}">
+    <!-- Main Section-->
+    <section class="mt-0 {{ config.classes.content }}">
+        <!-- Page Content Goes Here -->
+        <div class="mt-1">
+            <div class="mt-2">
+                <h1>ECA Work, Section 10</h1>
+                <p>For the current work we are going to undertake, let's get the context of the excercise fresh in our mind.</p>
+                <blockquote cite="https://utorontopress.com/9780802082220/for-a-new-political-economy/">
+                    <p>The problem of the present section may be put as follows. Consider two successive and equal intervals of time, long enough to be representative, yet not so long that much averaging is required. Suppose that in the first of the two intervals, objects of a class \(i\) were sold in the quantity \(q_{i}\) and at an average price \(p_{i}\), and in the second interval objects in the same class were sold in the quantity \(q_{i}+dq_{i}\) and at the average price \(p_{i}+dp_{i}\) Suppose, further, that there are \(n\) such classes, that the aggregate payment for them in the first interval was \(DZ\) and in the second interval was \(DZ+D^{^{2}}Z\) so that
+                    \[DZ=\sum p_iq_i\ \ \ \ \ \ \ \ (16) \]
+                    \[DZ+D^{^{2}}Z=\sum (p_i q_i + p_i dq_i + q_i dp_i + dp_i dq_i )\ \ \ \ \ \ (17) \]
+                    where all summations are taken with respect to all isntances of \(i\) from 1 to \(n\). The question is, How much does the increment in the rate of payment \(D^{^{2}}Z\) result from price increments \(dp_i\), and how much does it result from quantity increments \(dq_i\)? In other words, can one define two numbers, say \(P\) and \(Q\), such that \(P\) varies with a set of numbers \(p_1,\ p_2,\  p_3,\ ...\) and \(Q\) varies with another set of numbers \(q_1,\ q_2,\  q_3,\ ...\)
+                    </p>
+                    <footer>—Bernard Lonergan, <cite>Essays on Circulation Analysis</cite></footer>
+                </blockquote>
+                <p>We are going to take a look at the possible measurements proposed in section 10 of ECA.</p>
+                <div id="myPlot"></div>
+            </div>
+        </div>
+        <!-- /Page Content -->
+    </section>
+    <!-- / Main Section-->
+
+    <!-- Footer -->
+    {{> (config config.partials.footer)
+            configClassList=config.classes.footer
+            classList=""
+    }}
+    <!-- / Footer-->
+
+    <!-- Theme JS -->
+    {{> footer/scripts }}
+
+</body>
+
+</html>

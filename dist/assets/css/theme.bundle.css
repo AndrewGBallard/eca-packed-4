@@ -1,0 +1,1 @@
+body{overflow-x:hidden}blockquote{margin:0}blockquote p{padding:15px;background:#eee;border-radius:5px}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.mt-0{animation:fadeIn 1.5s;display:grid;margin:0 10px;justify-content:center}.mt-1{max-width:680px}.mt-1,.mt-2{display:block}.mt-2{min-width:600px}#myPlot{display:inline-block}
