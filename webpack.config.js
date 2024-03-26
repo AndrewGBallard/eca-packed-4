@@ -33,7 +33,7 @@ const paths = {
         js: './src/assets/js',
         favicon: './src/assets/favicon',
     },
-    dist: {
+    docs: {
         imgs: './assets/images',
         css: './assets/css',
         fonts: './assets/fonts',
@@ -50,7 +50,8 @@ const wPackConfig = {
         'theme':     [paths.src.js + '/theme.js', paths.src.scss + '/theme.scss']
       },
     output: {
-        filename: paths.dist.js + '/[name].bundle.js',
+        filename: paths.docs.js + '/[name].bundle.js',
+        path: path.resolve(__dirname, 'docs'),
     },
     devtool: 'source-map',
     mode: 'development',
@@ -73,14 +74,6 @@ const wPackConfig = {
                 },
                 {
                     loader: 'sass-loader',
-                    // options: {
-                    //     sourceMap: true,
-                    //     sassOptions: {
-                    //         indentWidth: 4,
-                    //         outputStyle: 'expanded',
-                    //         sourceComments: true
-                    //     }
-                    // }
                 },
             ],
         }, ]
@@ -128,24 +121,24 @@ const wPackConfig = {
         new CopyPlugin({
             patterns: [{
                     from: paths.src.fonts,
-                    to: paths.dist.fonts,
+                    to: paths.docs.fonts,
                     noErrorOnMissing: true
                 },
                 {
                     from: paths.src.imgs,
-                    to: paths.dist.imgs,
+                    to: paths.docs.imgs,
                     noErrorOnMissing: true
                 },
                 {
                     from: paths.src.favicon,
-                    to: paths.dist.favicon,
+                    to: paths.docs.favicon,
                     noErrorOnMissing: true
                 }
             ],
         }),
         new HandlebarsPlugin({
             entry: path.join(process.cwd(), 'src', 'html', '**', '*.html'),
-            output: path.join(process.cwd(), 'dist', '[path]', '[name].html'),
+            output: path.join(process.cwd(), 'docs', '[path]', '[name].html'),
             partials: [path.join(process.cwd(), 'src', 'partials', '**', '*.{html,svg}')],
             data: projectData,
             helpers: {
@@ -176,7 +169,7 @@ const wPackConfig = {
         }),
         new FixStyleOnlyEntriesPlugin(),
         new MiniCssExtractPlugin({
-            filename: paths.dist.css + '/[name].bundle.css',
+            filename: paths.docs.css + '/[name].bundle.css',
         }),
     ]
 };
